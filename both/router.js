@@ -13,6 +13,7 @@ Router.route('/', (function() {
 // Dashboard
 Router.route('/dashboard', (function() {
   this.render('dashboard');
+  this.layout('dashboardLayout');
 }), {
   name: 'dashboard'
 });
