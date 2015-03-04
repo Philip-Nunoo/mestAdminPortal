@@ -20,6 +20,7 @@ Router.route('/dashboard', (function() {
 // Dashboard {allProspects}
 Router.route('/prospects', (function() {
   this.render('prospects');
+  this.layout('dashboardLayout');
 }), {
   name: 'allProspects'
 });
@@ -27,6 +28,7 @@ Router.route('/prospects', (function() {
 // Dashboard {allApplicants}
 Router.route('/applicants', (function() {
   this.render('applicants');
+  this.layout('dashboardLayout');
 }), {
   name: 'allApplicants'
 });
@@ -34,6 +36,7 @@ Router.route('/applicants', (function() {
 // Dashboard {allEits}
 Router.route('/all_eits', (function() {
   this.render('allEits');
+  this.layout('dashboardLayout');
 }), {
   name: 'allEits'
 });
@@ -41,6 +44,15 @@ Router.route('/all_eits', (function() {
 // Dashboard {allAlumni}
 Router.route('/alumni', (function() {
   this.render('alumni');
+  this.layout('dashboardLayout');
 }), {
   name: 'allAlumni'
+});
+
+// Dashboard {newApplicant}
+Router.route('/new/applicant', (function() {
+  this.render('newApplicant');
+  this.layout('dashboardLayout');
+}), {
+  name: 'newApplicant'
 });
