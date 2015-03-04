@@ -9,7 +9,7 @@ body{
 .analytics{
   width: 100%;
   height: 120px;
-  border: 1px solid #000;
+  border: 1px solid #333;
 }
 
 
@@ -39,4 +39,26 @@ body{
 
 textarea{
 	border-width: 0 0 1px 0px;
+}
+
+.number{
+  height: 50px;
+}
+
+.dropdown-content {
+  height: 110px;
+}
+
+.dropdown-content li{
+  line-height: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.dropdown-content li > a{
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.dropdown-content li img{
+  border-radius: 50%;
 }
