@@ -8,4 +8,10 @@ meteor-platform
 autopublish
 insecure
 iron:router
+<<<<<<< HEAD
 materialize:materialize
+=======
+aldeed:collection2
+aldeed:autoform
+matb33:collection-hooks
+>>>>>>> ab7866b1befbdb7eeedf6757fbd71c58b82c90bd
