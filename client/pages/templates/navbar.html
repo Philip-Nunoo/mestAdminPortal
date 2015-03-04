@@ -1,0 +1,30 @@
+<template name="navbar">
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="{{pathFor 'allProspects'}}">Prospects</a></li>
+          <li><a href="{{pathFor 'allApplicants'}}">Applicants</a></li>
+          <li><a href="{{pathFor 'allEits'}}">EITS</a></li>
+          <li><a href="{{pathFor 'allAlumni'}}">Alumni</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-demo">
+          <li><a href="{{pathFor 'allProspects'}}">Prospects</a></li>
+          <li><a href="{{pathFor 'allApplicants'}}">Applicants</a></li>
+          <li><a href="{{pathFor 'allEits'}}">EITS</a></li>
+          <li><a href="{{pathFor 'allAlumni'}}">Alumni</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  
+  <script type="text/javascript">
+    $( document ).ready(function(){
+      $(".button-collapse").sideNav();
+
+      $(".dropdown-button").dropdown();
+    });
+
+  </script>
+</template>
