@@ -1,34 +1,42 @@
 <template name='applicants'>
-	Showing all applicants
-	<a href="{{pathFor 'newApplicant'}}">New Applicant</a> 
-	<input type="file" id="files" name="files[]" multiple>load csv	<div>
-		<table border="1">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>College</th>
-					<th>Date Created</th>
-					<th>stage</th>
-					<th>actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				{{#each applicants}}
-				<tr>
-					<td>{{firstName}}</td>
-					<td>{{college}}</td>
-					<td>{{createdAt}}</td>
-					<td>status</td>
-					<td>
-						<a href="">view</a> 
-						<a href="">update</a>
-						<a href="">comments</a>
-						<a href="" class="remove">remove</a>
-						
-					</td>
-				</tr>	
-				{{/each}}
-			</tbody>
-		</table>
+	<div class="applicantsDash">
+		<a href="#" class="button tiny radius round newApplicant">New Applicant</a> 
+		Showing all applicants
+		
+		<input type="file" id="files" name="files[]" multiple>
+		<div>
+			<table border="1">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>College</th>
+						<th>Date Created</th>
+						<th>stage</th>
+						<th>actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each applicants}}
+					<tr>
+						<td>{{firstName}}</td>
+						<td>{{college}}</td>
+						<td>{{createdAt}}</td>
+						<td>status</td>
+						<td>
+							<a href="">view</a> 
+							<a href="">update</a>
+							<a href="">comments</a>
+							<a href="" class="remove">remove</a>
+
+						</td>
+					</tr>	
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="myModal" class="reveal-modal" style="style='width: 40%;border-radius: 10px;'" data-reveal>
+		{{> quickForm collection="Applicants" id="insertApplicantForm" type="insert"}}
+		<a class="close-reveal-modal" style="font-weight: 100;">&#215;</a>
 	</div>
 </template>
