@@ -18,7 +18,13 @@
 					<td>{{firstName}}</td>
 					<td>{{college}}</td>
 					<td>{{createdAt}}</td>
-					<td>status</td>
+					<td>
+					{{#each stagesPassed}}
+						{{stageName stageId}}
+					{{else}}
+					no stage set
+					{{/each}}
+					</td>
 					<td>
 						<a href="">view</a> 
 						<a href="">update</a>
