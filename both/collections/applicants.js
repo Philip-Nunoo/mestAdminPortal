@@ -32,16 +32,17 @@ Applicants.attachSchema(new SimpleSchema({
 	},
 	college: {
 		type: String,
-		label: "College or Institution",
-		autoform: {
-			options: function(){
-				return [
-				{value: 'ust', label: 'KNUST'},
-				{value: 'ucc', label: 'UCC'},
-				{value: 'legon', label: 'Legon'}
-				]
-			}
-		}
+		label: "College or Institution"
+		// autoform: {
+		// 	afFieldInput: 'Select',
+		// 	options: function(){
+		// 		return [
+		// 		{value: 'ust', label: 'KNUST'},
+		// 		{value: 'ucc', label: 'UCC'},
+		// 		{value: 'legon', label: 'Legon'}
+		// 		]
+		// 	}
+		// }
 	},
 	summary: {
 		type: String,
@@ -65,3 +66,10 @@ Applicants.attachSchema(new SimpleSchema({
 		}
 	}
 }));
+
+Applicants.after.insert(function (userId, doc) {
+	// set user to new applicant stage
+	stage = Stages.findOne({stage: '0'});
+	console.log('stage Id: ' + stage._id + " : " + this._id);
+	ApplicantsStages.insert({applicantId: this._id, stageId: stage._id});
+});
