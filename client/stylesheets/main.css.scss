@@ -1,0 +1,161 @@
+/*main.css.scss*/
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,900,700,500);
+
+$torquoise: #1DD2AF;
+$emarald: #2ECC71;
+$peter-river: #4AA3DF;
+$amethyst: #9B59B6;
+$wet-asphalt: #3D566E;
+
+.fa-university{
+	color: $torquoise !important;
+}
+
+.fa-mortar-board{
+	color: $emarald !important;
+}
+
+.fa-bus{
+	color: $peter-river !important;
+}
+
+.fa-trophy{
+	color: $amethyst !important;
+}
+
+.fa-cup{
+	color: $wet-asphalt !important;
+}
+
+$font-family: 'Roboto', sans-serif;
+body{
+	font-size: 13px;
+	font-family: $font-family;
+	height: 100%;
+}
+
+nav{
+	border-bottom: 1px solid #999;
+
+	.left{
+		margin-left: 30px;
+
+		img{
+			width: 22px;
+			margin-right: 20px;
+			padding: 4px 0px;
+		}
+
+		h4{
+			display: inline-block;
+			font-family: $font-family;
+		}
+	}
+	.right{
+		display: inline-block;
+
+		a{
+			color: #999;
+			border-left: solid 1px #999;
+			font-size: 100%;
+			display: inline-block;
+			padding: 10px 14px;
+
+			&:hover{
+				color: #000;
+			}
+
+			i{
+				font-size: 23px;
+			}
+		}
+	}
+}
+
+.clear{
+	clear: both;
+}
+
+#leftNav{
+	border-right: 1px solid #999;
+	height: 100%;
+	padding: 0px;
+}
+
+ul.page-nav{
+	margin: 0px;
+
+	li{
+		list-style-type: none;
+
+		a{
+			color: #999;
+			text-align: left;
+			display: block;
+			border-bottom: 1px solid #999;
+			padding: 8px 40px;
+			font-size: 14px;
+
+			i{
+				margin-right: 10px;
+				color: #333;
+				display: inline-block;
+				background-color: #FFF;
+				padding: 5px;
+				border-radius: 50%;
+				text-align: center;
+			}
+
+			&:hover{
+				color: #111;
+			}
+		}
+	}
+}
+
+#dashboard{
+	height: 100%;
+
+	.dashboard{
+		padding: 20px;
+	}
+
+	.prospects{
+		padding: 20px;
+		.tabs-content{
+			border: #EFEFEF solid 1px;
+			border-radius: 0px 0px 5px 5px;
+		}
+		dl.tabs{
+			dd{
+				background-color: #EFEFEF;
+				border:1px solid #EFEFEF;
+
+				&:first-child{
+					border-radius: 15px 0px 0px 0px;
+				}
+
+				&:last-child{
+					border-radius: 0px 15px 0px 0px;
+				}
+
+				a{
+					/*background-color: transparent;*/
+					font-weight: 100;
+					font-family: $font-family;
+					padding: 10px 30px;
+					border-radius: 15px 15px 0px 0px;
+
+				}
+			}
+		}
+	}
+
+	.dash-board{
+		i{
+			font-size: 150px;
+			display: block;
+			text-align: center;
+		}
+	}
+}

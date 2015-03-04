@@ -1,4 +1,42 @@
 <template name="dashboardLayout">
-  {{> navbar}}
-  {{> yield}}
+	<nav>
+		<div class="left">
+			<a href="{{pathFor 'dashboard'}}">
+				<img src="/imgs/meltwater.png"/>
+				<h4>mestAdmin</h4>
+			</a>
+		</div>
+		<div class="right">
+			<a href=""><i class='fa fa-user'></i></a>
+			<a href=""><i class="fa fa-gears"></i></a>
+			<a href=""><i class='fa fa-envelope-o'></i></a>
+		</div>
+		<div class="clear"></div>
+	</nav>
+	<div class="rows" style="height: 100%;"> 
+		<div class="large-2 columns" id="leftNav">
+			<ul class="page-nav">
+				<li>
+					<a href="{{pathFor 'allProspects'}}"><i class="fa fa-university"></i>Prospects</a>
+				</li>
+				<li>
+					<a href=""><i class="fa fa-mortar-board"></i>Applicants</a>
+				</li>
+				<li>
+					<a href=""><i class="fa fa-bus"></i>EITs</a>
+				</li>
+				<li>
+					<a href=""><i class="fa fa-trophy"></i>Alumnis</a>
+				</li>
+				<li>
+					<a href=""><i class="fa fa-gears"></i>Settings</a>
+				</li>
+			</ul>
+		</div>
+		<div class="large-10 columns">
+			<div id="dashboard">
+				{{> yield}}
+			</div>
+		</div>
+	</div>
 </template>
