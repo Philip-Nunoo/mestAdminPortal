@@ -12,6 +12,7 @@ body{
   border: 1px solid #000;
 }
 
+
 .modal-content{
   padding-bottom: 10px !important;
 }
@@ -34,4 +35,8 @@ body{
 .sidenavbar ul li a{
   margin-top: 10px;
   color: #000;
+}
+
+textarea{
+	border-width: 0 0 1px 0px;
 }
