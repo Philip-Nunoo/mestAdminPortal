@@ -10,6 +10,8 @@ Template.prospects.events({
 
 	'click .newProspect': function(event) {
 		event.preventDefault();
-		console.log('hello');
+		$('#myModal').foundation('reveal', 'open', {
+			close_on_background_click: false
+		});
 	}
 });
