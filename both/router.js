@@ -33,6 +33,7 @@ Router.route('/prospects', (function() {
 });
 
 Router.route('/prospects/:category/', function(){
+  this.layout('dashboardLayout');
   this.render('prospects'); //calling projects template
 }, {
   name: 'prospectsCategory',
