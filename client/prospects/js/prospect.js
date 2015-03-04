@@ -2,6 +2,7 @@ AutoForm.hooks({
   addProspect: {
     onSuccess: function(operation, result, template) {
       Router.go('prospects');
+      $('#modal1').modalClose();
     },
     onError: function(operation, error, template) {
       alert(error);
