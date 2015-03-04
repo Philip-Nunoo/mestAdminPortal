@@ -1,5 +1,37 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic,300italic,500,700|Oswald:400,300,700);
+/*font-family: 'Oswald', sans-serif;
+font-family: 'Roboto', sans-serif;*/
+body{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+}
 .analytics{
   width: 100%;
   height: 120px;
   border: 1px solid #000;
+}
+
+.modal-content{
+  padding-bottom: 10px !important;
+}
+
+.row{
+  margin-bottom: 10px !important;
+}
+
+.sidenavbar{
+  min-height: 580px;
+  border-right: 1px solid #dfdfdf;
+}
+
+.sidenavbar ul li{
+  height: 50px;
+  border-bottom: 1px solid #dfdfdf;
+  padding-top: 20px;
+}
+
+.sidenavbar ul li a{
+  margin-top: 10px;
+  color: #000;
 }

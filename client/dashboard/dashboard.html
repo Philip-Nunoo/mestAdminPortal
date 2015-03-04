@@ -1,45 +1,87 @@
 <template name="dashboard">
-  
-  <br/><br/>
-
   <div class="dashboard">
-    <div class="container">
-      <div class="row">
-        <div class="col s3">
-          <div class="analytics">
-            <div>jgkrsiu</div>
-            <div>kjjfhj</div>
-          </div>
-        </div>
-        <div class="col s3">
-          <div class="analytics">
-            <div>jgkrsiu</div>
-            <div>kjjfhj</div>
-          </div>
-        </div>
-        <div class="col s3">
-          <div class="analytics">
-            <div>jgkrsiu</div>
-            <div>kjjfhj</div>
-          </div>
-        </div>
-        <div class="col s3">
-          <div class="analytics">
-            <div>jgkrsiu</div>
-            <div>kjjfhj</div>
-          </div>
-        </div>
+    <div class="row">
+      <div class="col s2 sidenavbar">
+        {{> sidenavbar}}
       </div>
-    </div>
 
-
-    <div class="notification">
-      <div class="row">
-        <div class="col s6">
-          fjkdgskjfdsg.,
+      <div class="col s10">
+        <br/>
+        <div class="">
+          <div class="row">
+            <div class="col s3">
+              <div class="analytics">
+                <div>jgkrsiu</div>
+                <div>kjjfhj</div>
+              </div>
+            </div>
+            <div class="col s3">
+              <div class="analytics">
+                <div>jgkrsiu</div>
+                <div>kjjfhj</div>
+              </div>
+            </div>
+            <div class="col s3">
+              <div class="analytics">
+                <div>jgkrsiu</div>
+                <div>kjjfhj</div>
+              </div>
+            </div>
+            <div class="col s3">
+              <div class="analytics">
+                <div>jgkrsiu</div>
+                <div>kjjfhj</div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col s6">
-          Notification Box
+
+
+        <div class="notification">
+          <div class="row">
+
+            <br/>
+            <h5>Latest Applicants</h5>
+            <table class="striped">
+              <thead>
+                <tr>
+                  <th data-field="id">Full Name</th>
+                  <th data-field="name">Stage</th>
+                  <th data-field="price">College</th>
+                  <th data-field="price" colspan="2">Results
+                  </th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>Ama Bankye Osie</td>
+                  <td>Aptitute Test</td>
+                  <td>University of Cape Coast</td>
+                  <td>bffds</td>
+                </tr>
+                <tr>
+                  <td>Alan</td>
+                  <td>Jellybean</td>
+                  <td>$3.76</td>
+                  <td>nbjbhjv</td>
+                </tr>
+                <tr>
+                  <td>Jonathan</td>
+                  <td>Lollipop</td>
+                  <td>$7.00</td>
+                  <td>nbdfs</td>
+                </tr>
+                <tr>
+                  <td>Jonathan</td>
+                  <td>Lollipop</td>
+                  <td>$7.00</td>
+                  <td>fhdshdsfb</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </div>
         </div>
       </div>
     </div>

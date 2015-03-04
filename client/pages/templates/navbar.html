@@ -2,28 +2,31 @@
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
+        <a href="#" class="brand-logo">
+          <img src="/imgs/mest-logo.png" width="217px" height="64px">
+        </a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="{{pathFor 'allProspects'}}">Prospects</a></li>
-          <li><a href="{{pathFor 'allApplicants'}}">Applicants</a></li>
-          <li><a href="{{pathFor 'allEits'}}">EITS</a></li>
-          <li><a href="{{pathFor 'allAlumni'}}">Alumni</a></li>
+          <li><a href="{{pathFor 'allProspects'}}"><i class="fa fa-user"></i></a></li>
+          <li><a href="{{pathFor 'allApplicants'}}"><i class="fa fa-cogs"></i></a></li>
+          <li><a href="{{pathFor 'allEits'}}"><i class="fa fa-envelope"></i></a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-          <li><a href="{{pathFor 'allProspects'}}">Prospects</a></li>
-          <li><a href="{{pathFor 'allApplicants'}}">Applicants</a></li>
-          <li><a href="{{pathFor 'allEits'}}">EITS</a></li>
-          <li><a href="{{pathFor 'allAlumni'}}">Alumni</a></li>
+          <li><a href="{{pathFor 'allProspects'}}"><i class="fa fa-user"></i></a></li>
+          <li><a href="{{pathFor 'allApplicants'}}"><i class="fa fa-cogs"></i></a></li>
+          <li><a href="{{pathFor 'allEits'}}"><i class="fa fa-envelope"></i></a></li>
         </ul>
       </div>
     </nav>
+
+
   </div>
   
   <script type="text/javascript">
     $( document ).ready(function(){
       $(".button-collapse").sideNav();
 
-      $(".dropdown-button").dropdown();
+      // $(".dropdown-button").dropdown();
     });
 
   </script>

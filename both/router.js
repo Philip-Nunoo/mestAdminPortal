@@ -57,3 +57,12 @@ Router.route('/new/applicant', (function() {
 }), {
   name: 'newApplicant'
 });
+
+
+// Dashboard {Comments on Applicant}
+Router.route('/comments/applicant', (function() {
+  this.render('comments');
+  this.layout('dashboardLayout');
+}), {
+  name: 'comments'
+});
