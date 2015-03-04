@@ -1,7 +1,8 @@
 Router.configure({
   layoutTemplate: 'layoutTemplate',
   loadingTemplate: 'loadingTemplate',
-  notFoundTemplate: 'notFoundTemplate'
+  notFoundTemplate: 'notFoundTemplate',
+  routeControllerNameConverter: "camelCase"
 });
 
 Router.route('/', (function() {
@@ -23,8 +24,30 @@ Router.route('/prospects', (function() {
   this.render('prospects');
   this.layout('dashboardLayout');
 }), {
-  name: 'allProspects'
+  name: 'prospects',
+  data: function(){
+    return{
+      prospects: Prospects.find().fetch().reverse()
+    }
+  }
 });
+
+Router.route('/prospects/:category/', function(){
+  this.layout('dashboardLayout');
+  this.render('prospects'); //calling projects template
+}, {
+  name: 'prospectsCategory',
+  data: function(){
+    return{
+      prospects: Prospects.find({category: this.params.category}).fetch()//finding a category based on a parameter
+      // business: Projects.find({category: "business"}).fetch().length,
+      // technology: Projects.find({category: "technology"}).fetch().length,
+      // communication: Projects.find({category: "communication"}).fetch().length
+    }
+  }
+});
+
+
 
 // Dashboard {allApplicants}
 Router.route('/applicants', (function() {
