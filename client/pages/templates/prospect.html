@@ -84,17 +84,17 @@
         <span class="card-title">{{firstName}} {{lastName}}</span>
         <p>Email Address: {{email}}</p>
         <p>Mobile Number: {{contact}}</p>
+        <p>Intro: {{description}}</p>
       </div>
       <div class="card-action">
-
-        <a href="">{{description}}</a>
+        <a href="#"> {{#quickRemoveButton collection="Prospects" _id=this._id}}Delete{{/quickRemoveButton}}</a>
       </div>
+
     </div>
   </div>
   {{/each}}
 </div>
 
-</div>
 </div>
 
 
