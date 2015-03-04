@@ -3,14 +3,23 @@ Prospects.attachSchema(new SimpleSchema({
 
     // Defining category and giving it options
 
-    name: {
+    firstName: {
         type: String,
-        label: "Name",
+        label: "First Name",
         optional: true,
-        max: 100,
-        autoform: {
-            rows: 1
-        }
+        max: 50,
+        // autoform: {
+        //     rows: 1
+        // }
+    },
+    lastName: {
+        type: String,
+        label: "Last Name",
+        optional: true,
+        max: 50,
+        // autoform: {
+        //     rows: 1
+        // }
     },
     email: {
         type: String,
@@ -23,13 +32,17 @@ Prospects.attachSchema(new SimpleSchema({
         label: "Contact Phone Number",
         optional: true,
         max: 100,
-        autoform: {
-            rows: 1
-        }
+        // autoform: {
+        //     rows: 1
+        // }
     },
      category: {
         type: String,
         autoform: {
+            afFieldInput: {
+                type: 'select',
+                class: 'browser-default'
+            },
             options: function(){
                 return [
                     {value: 'fellow', label: 'Fellow'},
@@ -47,7 +60,16 @@ Prospects.attachSchema(new SimpleSchema({
         optional: true,
         max: 1000,
         autoform: {
-            rows: 5
+    
+             afFieldInput: {
+                type: 'textarea'
+            }
         }
-    }
+    },
+    createdAt: {
+        type: Date,
+            autoValue: function () {
+                  return new Date()
+        }
+}
 }));
