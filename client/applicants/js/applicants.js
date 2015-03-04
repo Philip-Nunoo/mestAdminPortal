@@ -10,5 +10,13 @@ Template.applicants.events({
 		event.preventDefault();
 		Applicants.remove(this._id);
 		console.log("Applicant removed");
+	},
+
+	'click a.viewApplicant': function(event) {
+		// View applicant
+		event.preventDefault();
+		applicant = Applicants.findOne({_id: this._id});
+		$('#myModal').leanModal();
+		// return applicant;
 	}
 });

@@ -2,7 +2,7 @@
 	Showing all applicants
 	<a href="{{pathFor 'newApplicant'}}">New Applicant</a>
 	<div>
-	<table border="1">
+		<table border="1">
 			<thead>
 				<tr>
 					<th>Name</th>
@@ -19,14 +19,14 @@
 					<td>{{college}}</td>
 					<td>{{createdAt}}</td>
 					<td>
-					{{#each stagesPassed}}
+						{{#each stagesPassed}}
 						{{stageName stageId}}
-					{{else}}
-					no stage set
-					{{/each}}
+						{{else}}
+						no stage set
+						{{/each}}
 					</td>
 					<td>
-						<a href="">view</a> 
+						<a href="#" class="viewApplicant">view</a> 
 						<a href="">update</a>
 						<a href="">comments</a>
 						<a href="" class="remove">remove</a>
@@ -36,5 +36,14 @@
 				{{/each}}
 			</tbody>
 		</table>
+	</div>
+
+	<!-- End of Modal -->
+	<div id="myModal" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4>Modal Header</h4>
+			<p>A bunch of text</p>
+		</div>
+		<a class="close-reveal-modal">&#215;</a>
 	</div>
 </template>
