@@ -19,7 +19,7 @@ userHookFunction = function () {
 // OnBefore action hooks
 Router.onBeforeAction(userHookFunction, {
   only: ['dashboard', 'prospects', 'prospectsCategory', 
-         'allApplicants', 'allEits', 'allAlumni', 'newApplicant']
+  'allApplicants', 'allEits', 'allAlumni', 'newApplicant']
 });
 
 Router.route('/', (function() {
@@ -100,9 +100,16 @@ Router.route('/new/applicant', (function() {
 
 
 // Dashboard {Comments on Applicant}
-Router.route('/comments/applicant', (function() {
-  this.render('comments');
+Router.route('/comments/:_id', (function() {
+  this.render('applicantComments');
   this.layout('dashboardLayout');
 }), {
-  name: 'comments'
+  name: 'applicantComments',
+  data: function () {
+    var _id = this.params._id
+    return {
+      applicant: Applicants.findOne(_id),
+      comments: Comments.find({applicantId: _id}).fetch()
+    }
+  }
 });

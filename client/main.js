@@ -5,6 +5,7 @@ Template.registerHelper('stageName',function(stageId) {
 
 getNextStage = function(id){
 	var aps = ApplicantsStages.findOne({applicantId: id});
+	var applicant = Applicants.findOne({_id: id});
 	var stage = Stages.findOne({_id: aps.stageId}).stage;
 
 	if(stage == 0){
@@ -17,8 +18,12 @@ getNextStage = function(id){
 		return Stages.findOne({stage: 4});
 	}else if(stage == 4){
 		return Stages.findOne({stage: 5});
-	}else if(stage == 5){
-		return Stages.findOne({stage: 5});
+	}
+	else if(stage == 5){
+		console.log(applicant)
+		Eits.insert(applicant)
+		Applicants.remove(id);
+		// return Stages.findOne({stage: 5});
 	}
 	return Stages.findOne({stage: 0});
 }

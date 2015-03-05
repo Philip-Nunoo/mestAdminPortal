@@ -1,6 +1,5 @@
 // prospect.js
 Template.prospects.rendered = function () {
-	$(document).foundation({});
 };
 
 Template.prospects.events({

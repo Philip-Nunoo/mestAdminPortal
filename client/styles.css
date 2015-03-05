@@ -42,7 +42,8 @@ textarea{
 }
 
 .number{
-  height: 50px;
+  height: 60px;
+  font-size: 30px;
 }
 
 .dropdown-content {
@@ -61,4 +62,17 @@ textarea{
 
 .dropdown-content li img{
   border-radius: 50%;
+}
+
+.applicantimg{
+  border-radius: 50%;
+}
+
+
+.navlinks{
+  font-size: 25px;
+}
+
+.navlinks i{
+  margin-right: 70px;
 }

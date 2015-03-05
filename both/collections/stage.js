@@ -27,7 +27,7 @@ Stages.attachSchema(new SimpleSchema({
 }));
 
 
-if (!Stages.findOne()) {
+if (Stages.find().fetch().length ==0) {
 	staged = [
 	{stage: 0,stageName: 'Application stage',stageDescription: 'Initial Application'},
 	{stage: 1,stageName: 'Aptitude test stage',stageDescription: 'Those sitting for the Aptitude test'},
@@ -38,9 +38,6 @@ if (!Stages.findOne()) {
 	];
 
 	for (var i = 0; i < staged.length; i++) {
-		console.log(staged[i]);
 		Stages.insert(staged[i]);
 	};
-	// Stages.insert(staged[i]);
-
 };

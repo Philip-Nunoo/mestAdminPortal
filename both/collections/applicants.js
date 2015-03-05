@@ -29,18 +29,17 @@ Applicants.attachSchema(new SimpleSchema({
 	},
 	dateOfBirth: {
 		type: String,
-		label: "Date of Birth",
-		autoform: {
-			afFieldInput: {
-				type: 'date',
-				class: 'datepicker browser-default'
-			}
-		}
+		label: "Date of Birth"
 	},
 	programmeOfStudy: {
 		type: String,
 		label: "Program of study",
 		max: 300
+	},
+	email: {
+		type: String,
+		regEx: SimpleSchema.RegEx.Email,
+		label: "Contact Email"
 	},
 	college: {
 		type: String,
