@@ -10,9 +10,9 @@
 					<tr>
 						<th>Name</th>
 						<th>College</th>
-						<th>Date Created</th>
 						<th>stage</th>
 						<th>actions</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -20,28 +20,34 @@
 					<tr>
 						<td>{{firstName}}</td>
 						<td>{{college}}</td>
-						<td>{{moment createdAt}}</td>
 						<td>
 							{{#each stagesPassed}}
 							{{stageName stageId}}
 							{{else}}
 							no stage set
 							{{/each}}
-							<tr>
-								<td>
-									<a href="" class="applicantPassed">passed</a> 
-								</td>
-								<td>
-									<a href="" class="applicantFailed">failed</a>
-								</td>
-							</tr>
 						</td>
 						<td>
-							<a href="">view</a> 
-							<a href="">update</a>
-							<a href="">comments</a>
-							<a href="" class="remove">remove</a>
-
+							<div class="applicant-actions">
+								<a href="" class="view"><i class='fa fa-eye'></i></a> 
+								<a href="{{pathFor 'editApplicant' _id=this._id}}" class="">
+									<i class="fa fa-pencil"></i>
+								</a>
+								<a href="">
+									<i class="fa fa-comment-o"></i>
+								</a>
+								<a href="" class="remove"><i class="fa fa-times"></i></a>
+							</div>
+						</td>
+						<td>							
+							<ul class="stack-for-small round secondary button-group stack-applicant">
+								<li>
+									<a href="#" class="button tiny applicantPassed success">passed</a>
+								</li>
+								<li>
+									<a href="#" class="button tiny applicantFailed alert">failed</a>
+								</li>
+							</ul>
 						</td>
 					</tr>	
 					{{/each}}
@@ -53,13 +59,12 @@
 		{{> quickForm collection="Applicants" id="insertApplicantForm" type="insert"}}
 		<a class="close-reveal-modal" style="font-weight: 100;">&#215;</a>
 	</div>
-
-	<!-- End of Modal -->
-	<div id="myModal" class="modal modal-fixed-footer">
-		<div class="modal-content">
-			<h4>Modal Header</h4>
-			<p>A bunch of text</p>
-		</div>
-		<a class="close-reveal-modal">&#215;</a>
+	<div id="viewModal" class="reveal-modal" style="style='width: 40%;border-radius: 10px;'" data-reveal>
+		{{>viewApplicant}}
+		<a class="close-reveal-modal" style="font-weight: 100;">&#215;</a>
+	</div>
+	<div id="updateModal" class="reveal-modal" style="style='width: 40%;border-radius: 10px;'" data-reveal>
+		{{>updateApplicant}}
+		<a class="close-reveal-modal" style="font-weight: 100;">&#215;</a>
 	</div>
 </template>

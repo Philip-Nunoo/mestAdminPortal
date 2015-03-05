@@ -1,7 +1,7 @@
 <!-- allEits.html -->
 <template name='allEits'>
 	<div class="all_eits_dash">
-		<a href="#" class="button tiny radius round newApplicant">Add Eit</a>
+		<a href="{{pathFor 'newEit'}}" class="button tiny radius round newEit">Add Eit</a>
 		<input type="file" id="files" name="files[]" multiple>
 	</div>
 	<div>
@@ -21,9 +21,9 @@
 					<td>{{college}}</td>
 					<td>{{moment createdAt}}</td>
 					<td>
-						<a href="">view</a> 
-						<a href="">update</a>
-						<a href="">comments</a>
+						<a href="" class="view">view</a> 
+						<a href="{{pathFor 'editEit' _id=this._id}}">update</a>
+						<!-- <a href="">comments</a> -->
 						<a href="" class="remove">remove</a>
 
 					</td>
@@ -41,5 +41,9 @@
 				{{/each}}
 			</tbody>
 		</table>
+	</div>
+	<div id="viewModal" class="reveal-modal" style="style='width: 40%;border-radius: 10px;'" data-reveal>
+		{{>viewEit}}
+		<a class="close-reveal-modal" style="font-weight: 100;">&#215;</a>
 	</div>
 </template>

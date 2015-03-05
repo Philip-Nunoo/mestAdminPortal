@@ -6,8 +6,18 @@ Template.allEits.helpers({
 });
 
 Template.allEits.events({
-	'click': function () {
-		// ...
+	'click a.view': function () {
+		event.preventDefault();
+		var eit = Eits.findOne({_id: this._id});
+		Session.set('view_eit', eit);
+		console.log(eit);
+
+		$('#viewModal').foundation('reveal', 'open', {
+			close_on_background_click: false
+		});
+	},
+	'click a.remove': function () {
+		Eits.remove({_id: this._id});
 	},
 	"change #files": function (e) {
 		e.preventDefault();

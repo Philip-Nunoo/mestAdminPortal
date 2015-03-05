@@ -121,8 +121,7 @@ ul.page-nav{
 	}
 
 	#settings-dash{
-		/*width: 60%;
-		*/margin: auto;
+		padding: 20px;
 	}
 
 	.all_eits_dash{
@@ -130,7 +129,7 @@ ul.page-nav{
 	}
 
 	.applicantsDash{
-		padding: 20px;		
+		padding: 20px;	
 	}
 	
 	.prospects{
@@ -165,10 +164,32 @@ ul.page-nav{
 	}
 
 	.dash-board{
+
+		.holder{
+			padding:18px 9px;
+			margin: 18px;
+			box-shadow: 0px 0px 2px #EEE;
+			background-color: #9DADAD;
+			color: #FFF;
+		}
+
 		i{
-			font-size: 150px;
+			font-size: 100px;
 			display: block;
 			text-align: center;
+			color: white !important;
+
+			&:before{
+
+			}
+
+		}
+		div.info{
+			text-align: center;
+			.number{
+				font-size: 50px;
+			}
+
 		}
 	}
 }

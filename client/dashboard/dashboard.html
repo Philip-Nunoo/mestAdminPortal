@@ -1,42 +1,53 @@
 <template name="dashboard">
   <div class="dashboard">
-    <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-3">
+  <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4">
+      {{#each data}}
       <li>
         <div class="dash-board">
-          <i class="fa fa-university"></i>
-          <div>content goes here</div>
+          <div class="holder">
+            <i class="fa fa-university">
+            </i>
+            <div class="info">
+              <div class="number">
+                {{numberOfProspects}}
+              </div> Total number of prospects
+            </div>
+          </div>
         </div>
       </li>
       <li>
         <div class="dash-board">
-          <i class="fa fa-mortar-board"></i>
-          <div>content goes here</div>
+          <div class="holder">
+            <i class="fa fa-mortar-board"></i>
+            <div class="info">
+              <div class="number">{{numberOfApplicants}}
+              </div> Total number of applicants
+            </div>
+          </div>
         </div>
       </li>
       <li>
         <div class="dash-board">
-          <i class="fa fa-bus"></i>
-          <div>content goes here</div>
+          <div class="holder">
+            <i class="fa fa-bus"></i>
+            <div class="info">
+              <div class="number">{{numberOfEits}}
+              </div> Total Number of eits
+            </div>
+          </div>
         </div>
       </li>
       <li>
         <div class="dash-board">
-          <i class="fa fa-trophy"></i>
-          <div>content goes here</div>
+          <div class="holder">
+            <i class="fa fa-trophy"></i>
+            <div class="info">            <div class="number">{{numberOfAlumnis}}
+            </div> Total number of alumni
+          </div>
         </div>
-      </li>
-      <li>
-        <div class="dash-board">
-          <i class="fa fa-university"></i>
-          <div>content goes here</div>
-        </div>
-      </li>
-      <li>
-        <div class="dash-board">
-          <i class="fa fa-university"></i>
-          <div>content goes here</div>
-        </div>
-      </li>
-    </ul>
-  </div>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</div>
 </template>

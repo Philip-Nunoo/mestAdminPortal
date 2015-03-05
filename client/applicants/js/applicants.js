@@ -5,6 +5,26 @@ Template.applicants.helpers({
 });
 
 Template.applicants.events({
+	'click a.update': function(event) {
+		event.preventDefault();
+		var applicant = Applicants.findOne({_id: this._id});
+		Session.set('update_applicant', applicant);
+		console.log(applicant);
+		
+		$('#updateModal').foundation('reveal', 'open', {
+			close_on_background_click: false
+		});
+	},
+	'click a.view': function(event) {
+		event.preventDefault();
+		var applicant = Applicants.findOne({_id: this._id});
+		Session.set('view_applicant', applicant);
+		console.log(applicant);
+
+		$('#viewModal').foundation('reveal', 'open', {
+			close_on_background_click: false
+		});
+	},
 	'click a.applicantPassed': function(event) {
 		event.preventDefault();
 		var newStage = getNextStage(this._id);

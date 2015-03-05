@@ -1,0 +1,27 @@
+<!-- viewApplicant.html -->
+<template name='viewApplicant'>
+	<div>
+		View user
+		<div>
+			{{#with $.Session.get 'view_applicant'}}
+				<div>
+				First Name: {{firstName}}
+				</div>
+				<div>
+				Last Name: {{lastName}}
+				</div>
+				<div>
+				College: {{college}}
+				</div>
+				<div>
+				Program: {{programmeOfStudy}}
+				</div>
+				<div>
+				Summary: {{summary}}
+				</div>
+			{{else}}
+				nothing here
+			{{/with}}
+		</div>
+	</div>
+</template>

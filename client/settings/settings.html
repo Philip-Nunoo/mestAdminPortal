@@ -2,30 +2,33 @@
 <template name='settings'>
 	<div id="settings-dash">
 		<div class="row">
-			<div class="large-2 columns">
-				<a href="">new </a>
+			<div class="large-3 columns">
+				<ul class="stack button-group radius" style="margin-bottom: 20px;">
+					<li>
+						<a href="{{pathFor 'settings' _id='newSettings' }}" class="button success tiny newItems">new settings</a>
+					</li>
+					<li>
+					<a href="{{pathFor 'settings' _id='newStage'}}" class="button success tiny newItems">Add Stage</a>
+					</li>
+				</ul>
+				<div>
+					<ul class="stack button-group radius">
+						{{#each allSettings}}
+						<li>
+							<a href="{{pathFor 'settings' _id=this._id }}" class="button tiny updateSettings">{{title}}</a>
+						</li>
+						{{/each}}
+					</ul>
+				</div>
 			</div>
-			<div class="large-10 columns">
+			<div class="large-9 columns">
+				<div id="settingsHolder">
+				</div>
+				<!-- <h4>Application settings</h4>
 				<fieldset>
-					<legend><h4>Application settings</h4></legend>
-
-					<div class="item">
-						<label for="group1NotificationDate">Group 1 interview notification date</label>
-						<input type='date'>
-					</div>
-					<div class="item">
-						<label for="group2NotificationDate">Group 2 interview notification date</label>
-						<input type='date'>
-					</div>
-					<div class="item">
-						<label for="finalNotificationDate">Final notification date</label>
-						<input type='date'>
-					</div>
-					<div class="item">
-						<label for="eitAlumni">Eit Alumni Notification date</label>
-						<input type='date'>
-					</div>
-				</fieldset>
+					<legend></legend>
+					{{>Template.dynamic template=template data=dataContext}}
+				</fieldset> -->
 			</div>
 		</div>
 	</div>

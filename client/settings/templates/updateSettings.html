@@ -1,0 +1,11 @@
+<!-- updateSettings.html -->
+<template name='updateSettings'>
+	<div>
+		Update Form
+		<div>
+			<h4>hel: {{data}}</h4>
+			{{dataContext}}
+			{{> quickForm collection="Settings" doc=data id="settingsForm" type="update"}}
+		</div>
+	</div>
+</template>
