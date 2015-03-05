@@ -21,7 +21,21 @@
 						<td>{{firstName}}</td>
 						<td>{{college}}</td>
 						<td>{{createdAt}}</td>
-						<td>status</td>
+						<td>
+							{{#each stagesPassed}}
+							{{stageName stageId}}
+							{{else}}
+							no stage set
+							{{/each}}
+							<tr>
+								<td>
+									<a href="" class="applicantPassed">passed</a> 
+								</td>
+								<td>
+									<a href="" class="applicantFailed">failed</a>
+								</td>
+							</tr>
+						</td>
 						<td>
 							<a href="">view</a> 
 							<a href="">update</a>
@@ -38,5 +52,14 @@
 	<div id="myModal" class="reveal-modal" style="style='width: 40%;border-radius: 10px;'" data-reveal>
 		{{> quickForm collection="Applicants" id="insertApplicantForm" type="insert"}}
 		<a class="close-reveal-modal" style="font-weight: 100;">&#215;</a>
+	</div>
+
+	<!-- End of Modal -->
+	<div id="myModal" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4>Modal Header</h4>
+			<p>A bunch of text</p>
+		</div>
+		<a class="close-reveal-modal">&#215;</a>
 	</div>
 </template>

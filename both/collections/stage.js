@@ -12,7 +12,7 @@ Stages = new Mongo.Collection('stages', {
 
 Stages.attachSchema(new SimpleSchema({
 	stage: {
-		type: String,
+		type: Number,
 		label: "Stage"
 	},
 	stageName: {

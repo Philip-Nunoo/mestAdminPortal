@@ -1,6 +1,7 @@
 {
   "packages": {
     "foundation": {},
-    "jquery-csv": {}
+    "jquery-csv": {},
+    "moment": {}
   }
 }
