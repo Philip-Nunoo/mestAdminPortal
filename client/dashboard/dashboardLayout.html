@@ -1,4 +1,11 @@
 <template name="dashboardLayout">
-  {{> navbar}}
-  {{> yield}}
+	{{> navbar}}
+	
+	<div class="rows" style="height: 100%;"> 
+		<div class="large-10 columns">
+			<div id="dashboard">
+				{{> yield}}
+			</div>
+		</div>
+	</div>
 </template>

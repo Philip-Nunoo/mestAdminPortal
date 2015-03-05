@@ -3,7 +3,14 @@ Applicant = function (doc) {
 	_.extend(this, doc);
 };
 
-_.extend(Applicant.prototype, {});
+_.extend(Applicant.prototype, {
+	stagesPassed: function(){
+		return ApplicantsStages.find({applicantId: this._id}).fetch();
+	},
+	currentStage: function(){
+		return ApplicantsStages.findOne({applicantId: this._id});
+	}
+});
 
 Applicants = new Mongo.Collection('applicants', {
 	transform: function (doc) { return new Applicant(doc);}
@@ -23,7 +30,12 @@ Applicants.attachSchema(new SimpleSchema({
 	dateOfBirth: {
 		type: String,
 		label: "Date of Birth",
-		max: 300
+		autoform: {
+			afFieldInput: {
+				type: 'date',
+				class: 'datepicker browser-default'
+			}
+		}
 	},
 	programmeOfStudy: {
 		type: String,
@@ -34,6 +46,10 @@ Applicants.attachSchema(new SimpleSchema({
 		type: String,
 		label: "College or Institution",
 		autoform: {
+			afFieldInput: {
+				type: 'select',
+				class: 'browser-default'
+			},
 			options: function(){
 				return [
 				{value: 'ust', label: 'KNUST'},
@@ -47,7 +63,12 @@ Applicants.attachSchema(new SimpleSchema({
 		type: String,
 		label: "Tell us about yourself",
 		optional: false,
-		max: 1000
+		max: 1000,
+		autoform: {
+			afFieldInput: {
+				type: 'textarea'
+			}
+		}
 	},
 	createdAt: {
 		type: Date,
@@ -65,3 +86,11 @@ Applicants.attachSchema(new SimpleSchema({
 		}
 	}
 }));
+
+Applicants.after.insert(function (userId, doc) {
+	// set user to new applicant stage
+	var stage = Stages.findOne({stage: 0});
+	if(!ApplicantsStages.findOne({applicantId: this._id, stageId: stage._id})){
+		ApplicantsStages.insert({applicantId: this._id, stageId: stage._id});
+	}
+});

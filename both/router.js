@@ -5,6 +5,23 @@ Router.configure({
   routeControllerNameConverter: "camelCase"
 });
 
+userHookFunction = function () {
+  if (!Meteor.userId()) { 
+    // if the user is not logged in, render the Login template
+    Router.go('home');
+  } else { 
+    // otherwise don't hold up the rest of hooks or our route/action function 
+    // from running
+    this.next();
+  }
+};
+
+// OnBefore action hooks
+Router.onBeforeAction(userHookFunction, {
+  only: ['dashboard', 'prospects', 'prospectsCategory', 
+         'allApplicants', 'allEits', 'allAlumni', 'newApplicant']
+});
+
 Router.route('/', (function() {
   this.render('home');
 }), {
