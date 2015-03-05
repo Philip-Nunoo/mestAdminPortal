@@ -19,7 +19,8 @@ userHookFunction = function () {
 // OnBefore action hooks
 Router.onBeforeAction(userHookFunction, {
   only: ['dashboard', 'prospects', 'prospectsCategory', 
-         'allApplicants', 'allEits', 'allAlumni', 'newApplicant']
+         'allApplicants', 'allEits', 'allAlumni', 
+         'newApplicant', 'settings']
 });
 
 Router.route('/', (function() {
@@ -96,4 +97,12 @@ Router.route('/new/applicant', (function() {
   this.layout('dashboardLayout');
 }), {
   name: 'newApplicant'
+});
+
+// Dashboard {settings}
+Router.route('/settings', (function() {
+  this.render('settings');
+  this.layout('dashboardLayout');
+}), {
+  name: 'settings'
 });

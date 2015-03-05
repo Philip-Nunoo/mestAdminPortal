@@ -2,6 +2,9 @@ Template.registerHelper('stageName',function(stageId) {
 	return Stages.findOne({_id: stageId}).stageName;
 });
 
+Template.registerHelper('moment', function(date){
+	return moment(date, ["MM-DD-YYYY", "DD-MM", "DD-MM-YYYY"]);
+});
 
 getNextStage = function(id){
 	var aps = ApplicantsStages.findOne({applicantId: id});

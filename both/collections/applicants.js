@@ -56,6 +56,10 @@ Applicants.attachSchema(new SimpleSchema({
 		optional: false,
 		max: 1000
 	},
+	yearGroup: {
+		type: String,
+		label: 'Year Group'
+	},
 	createdAt: {
 		type: Date,
 		autoform: {
