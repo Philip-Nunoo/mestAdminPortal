@@ -17,7 +17,6 @@ fortawesome:fontawesome
 jquery-csv
 accounts-base
 accounts-password
-joshowens:accounts-entry
 moment
 raix:handlebar-helpers
 coffeescript
