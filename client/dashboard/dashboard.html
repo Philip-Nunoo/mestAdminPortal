@@ -1,7 +1,16 @@
 <template name="dashboard">
   <div class="dashboard">
-  <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4">
-      {{#each data}}
+    <div class="notice">
+      <h4>Welcome to the mest register portal</h4>
+      <p>
+        You can find all prospective, current and past members of the mest community
+      </p>
+      <p>
+        This provides an intuitive way for admin staffs to seamlessly monitor processes beginning from the application stage till one becomes an alumni.
+      </p>
+    </div>
+    <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4">
+      {{#each item}}
       <li>
         <div class="dash-board">
           <div class="holder">

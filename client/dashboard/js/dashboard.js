@@ -1,6 +1,7 @@
 // dashboard.js
 Template.dashboard.helpers({
-	data: function () {
+	item: function () {
+		console.log('hellow');
 		return [
 			{
 				numberOfProspects: Prospects.find().count(),
