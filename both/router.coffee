@@ -5,7 +5,7 @@ Router.configure
   routeControllerNameConverter: "camelCase"
 
 userHookFunction = () ->
-  if !Meteor.user()
+  if !Meteor.userId()
     Router.go('sign-in')
   else
     this.next()

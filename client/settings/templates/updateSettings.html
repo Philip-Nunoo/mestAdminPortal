@@ -1,10 +1,9 @@
 <!-- updateSettings.html -->
 <template name='updateSettings'>
 	<div>
-		Update Form
+		<h2>Update Notification Form</h2>
 		<div>
-			<h4>hel: {{data}}</h4>
-			{{dataContext}}
+			<h4>Title: {{data.title}}</h4>
 			{{> quickForm collection="Settings" doc=data id="settingsForm" type="update"}}
 		</div>
 	</div>

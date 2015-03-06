@@ -1,17 +1,21 @@
 <template name="dashboard">
   <div class="dashboard">
-    <div class="notice">
-      <h4>Welcome to the mest register portal</h4>
-      <p>
-        You can find all prospective, current and past members of the mest community
-      </p>
-      <p>
-        This provides an intuitive way for admin staffs to seamlessly monitor processes beginning from the application stage till one becomes an alumni.
-      </p>
+    <div data-alert class="alert-box info radius">
+      <a href="#" class="close" style="top: 10%; font-size: 30px;">&times;</a>
+      <div class="notice3">
+        <h4>Welcome to the mest register portal</h4>
+        <p>
+          You can find all prospective, current and past members of the mest community
+        </p>
+        <p>
+          This provides an intuitive way for admin staffs to seamlessly monitor processes beginning from the application stage till one becomes an alumni.
+        </p>
+      </div>  
     </div>
-    <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4">
+    
+    <div class="large-12 columns">
       {{#each item}}
-      <li>
+      <div class='dash-item-list'>
         <div class="dash-board">
           <div class="holder">
             <i class="fa fa-university">
@@ -23,8 +27,8 @@
             </div>
           </div>
         </div>
-      </li>
-      <li>
+      </div>
+      <div class='dash-item-list'>
         <div class="dash-board">
           <div class="holder">
             <i class="fa fa-mortar-board"></i>
@@ -34,8 +38,8 @@
             </div>
           </div>
         </div>
-      </li>
-      <li>
+      </div>
+      <div class='dash-item-list'>
         <div class="dash-board">
           <div class="holder">
             <i class="fa fa-bus"></i>
@@ -45,8 +49,8 @@
             </div>
           </div>
         </div>
-      </li>
-      <li>
+      </div>
+      <div class='dash-item-list'>
         <div class="dash-board">
           <div class="holder">
             <i class="fa fa-trophy"></i>
@@ -55,8 +59,8 @@
           </div>
         </div>
       </div>
-    </li>
+    </div>
     {{/each}}
-  </ul>
+  </div>
 </div>
 </template>
