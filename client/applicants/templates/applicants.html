@@ -1,8 +1,19 @@
 <template name='applicants'>
 	<div class="applicantsDash">
+		<div data-alert class="alert-box info radius">
+			<a href="#" class="close" style="top: 10%; font-size: 30px;">&times;</a>
+			<div class="notice3">
+				<h4>Welcome to the mest applicants portal</h4>
+				<p>
+					You can Load from a csv file as well: 
+				</p>
+				<p>
+					Look for <b>applicants.csv</b> in the file directory to upload
+				</p>
+			</div> 
+		</div>
 		<a href="#" class="button tiny radius round newApplicant">New Applicant</a> 
 		Showing all applicants
-		
 		<input type="file" id="files" name="files[]" multiple>
 		<div>
 			<table border="1">

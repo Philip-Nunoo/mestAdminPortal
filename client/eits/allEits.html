@@ -1,5 +1,17 @@
 <!-- allEits.html -->
 <template name='allEits'>
+	<div data-alert class="alert-box info radius">
+		<a href="#" class="close" style="top: 10%; font-size: 30px;">&times;</a>
+		<div class="notice3">
+			<h4>Welcome to the mest Eits portal page</h4>
+			<p>
+				You can Load from a csv file as well: 
+			</p>
+			<p>
+				Look for <b>eits.csv</b> in the file directory to upload
+			</p>
+		</div> 
+	</div>
 	<div class="all_eits_dash">
 		<a href="{{pathFor 'newEit'}}" class="button tiny radius round newEit">Add Eit</a>
 		<input type="file" id="files" name="files"/>
