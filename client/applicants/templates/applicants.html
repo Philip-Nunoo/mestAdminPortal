@@ -29,14 +29,16 @@
 						</td>
 						<td>
 							<div class="applicant-actions">
-								<a href="" class="view"><i class='fa fa-eye'></i></a> 
-								<a href="{{pathFor 'editApplicant' _id=this._id}}" class="">
+								<a href="" class="view" title="View">
+									<i class='fa fa-eye'></i>
+								</a> 
+								<a href="{{pathFor 'editApplicant' _id=this._id}}" class="" title="Edit">
 									<i class="fa fa-pencil"></i>
 								</a>
-								<a href="">
+								<!-- <a href="" >
 									<i class="fa fa-comment-o"></i>
-								</a>
-								<a href="" class="remove"><i class="fa fa-times"></i></a>
+								</a> -->
+								<a href="" class="remove" title="Remove"><i class="fa fa-times"></i></a>
 							</div>
 						</td>
 						<td>							

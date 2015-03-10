@@ -26,7 +26,8 @@ Router.onBeforeAction userHookFunction,
   'newApplicant', 'editEit', 'newEit', 'settings', 'editApplicant']
 
 Router.route '/', () ->
-  this.render('home')
+  # this.render('home')
+  Router.go 'sign-in'
   return
 , name: 'home'
 
