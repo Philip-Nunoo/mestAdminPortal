@@ -27,6 +27,17 @@ Applicants.attachSchema(new SimpleSchema({
 		label: "Last Name",
 		max: 300
 	},
+    email: {
+        type: String,
+        regEx: SimpleSchema.RegEx.Email,
+        label: "Contact Email"
+    },
+    contact: {
+        type: String,
+        label: "Contact Phone Number",
+        optional: true,
+        max: 100
+    },
 	dateOfBirth: {
 		type: String,
 		label: "Date of Birth",

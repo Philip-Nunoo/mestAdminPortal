@@ -2,7 +2,8 @@
 <template name='allEits'>
 	<div class="all_eits_dash">
 		<a href="{{pathFor 'newEit'}}" class="button tiny radius round newEit">Add Eit</a>
-		<input type="file" id="files" name="files[]" multiple>
+		<input type="file" id="files" name="files"/>
+		<input type="button" value="upload" class="uploadFile"/>
 	</div>
 	<div>
 		<table border="1">
@@ -25,7 +26,6 @@
 						<a href="{{pathFor 'editEit' _id=this._id}}">update</a>
 						<!-- <a href="">comments</a> -->
 						<a href="" class="remove">remove</a>
-
 					</td>
 				</tr>
 				{{else}}

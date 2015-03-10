@@ -7,9 +7,9 @@
 			</a>
 		</div>
 		<div class="right">
-			<a data-dropdown="drop" aria-controls="drop1" aria-expanded="false"><i class='fa fa-user'></i></a>
+			<a data-dropdown="drop" aria-controls="drop1" aria-expanded="false" data-options="is_hover:true"><i class='fa fa-user'></i></a>
 			<ul id="drop" class="f-dropdown" data-dropdown-content aria-hidden="true" tabindex="-1">
-				<li><a href="#">Edit Profile</a></li>
+				<li><a href="{{pathFor 'userSettings'}}">Edit Profile</a></li>
 				<li><a href="" class="force-logout">Logout</a></li>
 			</ul>
 
@@ -36,6 +36,9 @@
 				<!-- <li>
 					<a href=""><i class="fa fa-trophy"></i>Alumnis</a>
 				</li> -->
+				<li>
+					<a href="{{pathFor 'records'}}"><i class="fa fa-pie-chart"></i><span>Records</span></a>
+				</li>
 				<li>
 					<a href="{{pathFor 'settings' _id='settings' }}"><i class="fa fa-gears"></i><span>Settings</span></a>
 				</li>

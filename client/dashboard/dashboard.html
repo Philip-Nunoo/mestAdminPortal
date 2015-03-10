@@ -13,17 +13,17 @@
       </div>  
     </div>
     
-    <div class="large-12 columns">
+    <div class="large-12 columns homeboard">
       {{#each item}}
       <div class='dash-item-list'>
         <div class="dash-board">
           <div class="holder">
-            <i class="fa fa-university">
-            </i>
+            <i class="fa fa-university"></i>
             <div class="info">
               <div class="number">
                 {{numberOfProspects}}
-              </div> Total number of prospects
+              </div> 
+              Total number of prospects
             </div>
           </div>
         </div>
@@ -33,8 +33,10 @@
           <div class="holder">
             <i class="fa fa-mortar-board"></i>
             <div class="info">
-              <div class="number">{{numberOfApplicants}}
-              </div> Total number of applicants
+              <div class="number">
+                {{numberOfApplicants}}
+              </div> 
+              Total number of applicants
             </div>
           </div>
         </div>
@@ -44,23 +46,64 @@
           <div class="holder">
             <i class="fa fa-bus"></i>
             <div class="info">
-              <div class="number">{{numberOfEits}}
-              </div> Total Number of eits
+              <div class="number">
+                {{numberOfEits}}
+              </div> 
+              Total Number of eits
             </div>
           </div>
         </div>
       </div>
+      
       <div class='dash-item-list'>
         <div class="dash-board">
           <div class="holder">
             <i class="fa fa-trophy"></i>
-            <div class="info">            <div class="number">{{numberOfAlumnis}}
-            </div> Total number of alumni
+            <div class="info">
+              <div class="number">
+                {{numberOfAlumnis}}
+              </div> Total number of alumni
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+
+    <div class="large-12 columns chart-board">
+      <div class="large-8 columns">
+        <div class="chart">
+          <div>
+            <div class="header">
+              <h3>Pie chart to show total number of</h3>
+              <h5>{applicants, eits, alumni}</h5>
+            </div>
+          </div>
+          <canvas id="pieChart1">applicants</canvas>
+          <canvas id="pieChart2">eits</canvas>
+          <canvas id="pieChart3">alumni</canvas>
+          <div class="clear" style="margin-bottom: 30px;"></div>
+        </div>
+      </div>
+      <div class="large-4 columns">
+        <div class="chart notifications">
+          <h3>Notifications</h3>
+          <div>
+            <div class="adminNotice">
+              23 Emails sent for registration
+            </div>
+            <div class="adminNotice">
+              23 Emails sent for registration
+            </div>
+            <div class="adminNotice">
+              23 Emails sent for registration
+            </div>
+            <div class="adminNotice">
+              23 Emails sent for registration
+            </div>
           </div>
         </div>
       </div>
     </div>
-    {{/each}}
   </div>
-</div>
 </template>

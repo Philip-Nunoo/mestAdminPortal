@@ -1,7 +1,7 @@
 Router.configure
-  layoutTemplate: 'layoutTemplate',
-  loadingTemplate: 'loadingTemplate',
-  notFoundTemplate: 'notFoundTemplate',
+  layoutTemplate: 'layoutTemplate'
+  loadingTemplate: 'loadingTemplate'
+  notFoundTemplate: 'notFoundTemplate'
   routeControllerNameConverter: "camelCase"
 
 userHookFunction = () ->
@@ -10,6 +10,15 @@ userHookFunction = () ->
   else
     this.next()
 
+noLoginPageHookFunction = () ->
+  if Meteor.userId()
+    Router.go 'dashboard'
+  else
+    this.next()
+
+Router.onBeforeAction noLoginPageHookFunction,
+  only: ['sign-in']
+  
 # OnBefore action hooks
 Router.onBeforeAction userHookFunction,
   only: ['dashboard', 'prospects', 'prospectsCategory', 
@@ -35,6 +44,22 @@ Router.route '/dashboard',  () ->
   return
 , name: 'dashboard'
 
+# Dashboard {profile}
+Router.route '/user_settings', () ->
+  this.render 'userSettings'
+  this.layout 'dashboardLayout'
+  return
+,
+  name: 'userSettings'
+
+# Dashboard {records}
+Router.route '/records', () ->
+  this.render 'systemRecords'
+  this.layout 'dashboardLayout'
+  return
+, 
+  name: 'records'
+  
 # Dashboard {allProspects}
 Router.route '/prospects', () ->
   this.render('prospects')
@@ -43,7 +68,15 @@ Router.route '/prospects', () ->
 , 
   name: 'prospects',
   data: () ->
-    return prospects: Prospects.find().fetch().reverse()
+    return {
+      prospects: Prospects.find().fetch(),
+      eits: Prospects.find({category: 'eit'}).fetch(),
+      fellows: Prospects.find({category: 'fellow'}).fetch(),
+      staffs: Prospects.find({category: 'staff'}).fetch(),
+      investors: Prospects.find({category: 'investor'}).fetch(),
+      others: Prospects.find({category: 'others'}).fetch()
+    }
+
 
 Router.route '/prospects/:category/', ()->
   this.layout('dashboardLayout');

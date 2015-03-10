@@ -84,7 +84,7 @@ nav{
 
 #body-content {
 	background-color: #EEEEEE;
-	height: 100%;
+	min-height: 100%;
 }
 
 ul.page-nav{
@@ -129,6 +129,17 @@ ul.page-nav{
 	}
 }
 
+.prospect-card{
+	border: 1px solid #AAA;
+	border-radius: 8px;
+	box-shadow: 0px 2px 1px;
+	background-color: #EEE;
+	.holder{
+		padding: 12px;
+
+	}
+
+}
 #dashboard{
 	height: 100%;
 
@@ -157,10 +168,11 @@ ul.page-nav{
 		padding: 20px;
 
 		#settingsHolder{
-			background-color: #CFCFCF;
+			background-color: #FFF;
 			padding: 12px;
 			border-radius: 5px;
 			box-shadow: 0px 4px #DDD;
+			border: solid 1px #DDD;
 		}
 	}
 
@@ -177,18 +189,31 @@ ul.page-nav{
 		.tabs-content{
 			border: #EFEFEF solid 1px;
 			border-radius: 0px 0px 5px 5px;
+			background-color: #FFF;
+			padding: 12px;
+			box-shadow: 0px 2px 3px #000;
+			border-width: 0px 1px 1px 1px;
 		}
 		dl.tabs{
 			dd{
 				background-color: #EFEFEF;
 				border:1px solid #EFEFEF;
-
+				border: solid 0px #444;
+				border-width: 1px 0px 0px 0px;
+				box-shadow: 0px -2px 5px;
+				border-radius: 10px;
+				&.active{
+					border-bottom-width: 0px;
+					font-weight: 400;
+				}
 				&:first-child{
 					border-radius: 15px 0px 0px 0px;
+					border-width: 1px 0px 0px 1px;
 				}
 
 				&:last-child{
 					border-radius: 0px 15px 0px 0px;
+					border-width: 1px 1px 0px 0px;
 				}
 
 				a{
@@ -203,7 +228,48 @@ ul.page-nav{
 		}
 	}
 
+	.chart-board{
+		margin: 40px 0px;
+		padding: 0px;
+
+		.chart{
+			/*width: (100%/4);*/
+			/*float: left;*/
+			padding-bottom: 30px;
+
+			.header{
+				text-align: center;
+				margin-bottom: 32px;
+
+				h3, h5 {
+					font-weight: 100;
+					margin: 0px;
+					font-family: $font-family;
+
+				}
+
+				h3{
+					font-size: 30px;
+				}
+				h5{
+					font-size: 25px;
+					font-weight: 400;
+				}
+			}
+			box-shadow: 0px 0px 4px #666;
+			border-radius: 4px;
+			padding: 12px;
+			background-color: #FFF;
+
+			canvas[id^="pieChart"]{
+				width: (100%/3) !important;
+				float: left;
+				height: auto !important;
+			}
+		}
+	}
 	.dash-item-list{
+
 		float: left;
 		width: (100%/4);
 
@@ -290,6 +356,17 @@ input[type="file"]{
 	height: 100%;
 	padding-top: 5%;
 
+	.animated{
+		animation-delay: 2s; 
+		animation-iteration-count: infinite;
+		animation-duration: 2s;
+		-webkit-animation-delay: 2s; 
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-duration: 2s;
+		-moz-animation-delay: 2s; 
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-duration: 2s;
+	}
 	.header{
 		text-align: center;
 	}
