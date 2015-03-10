@@ -1,0 +1,26 @@
+<!-- prospectCards.html -->
+<template name='prospectCards'>
+
+	<ul class="large-block-grid-4">
+		{{#each datum}}
+		<li>
+			<div class="prospect-card">
+				<div class="holder">
+					<div class="card-content white-text">
+						<span class="card-title">{{firstName}} {{lastName}}</span>
+						<p>Email Address: {{email}}</p>
+						<p>Mobile Number: {{contact}}</p>
+					</div>
+					<div class="card-action">
+						<a href="#">{{description}}</a>
+					</div>
+				</div>
+			</div>
+		</li>
+		{{else}}
+		<li>
+			<h4>No prospect in this category.</h4>			
+		</li>
+		{{/each}}
+	</ul>
+</template>

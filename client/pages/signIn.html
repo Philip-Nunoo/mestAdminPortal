@@ -1,0 +1,41 @@
+<!-- signIn.html -->
+<template name='signIn'>
+	<link rel="stylesheet" href="/css/animate.min.css">
+	<div id="signIn">
+		<div class="row">
+			<div class="large-6 large-centered columns">
+				<div class="header">
+					<div class="img animated pulse">
+						<img src="/imgs/meltwater.png">
+					</div>
+					<h1 class="title">Mest Admin</h1>
+				</div>
+				<form id='signInForm'>
+					<div data-alert class="alert-box info radius">
+						<a href="#" class="close" style="top: 10%; font-size: 30px;">&times;</a>
+						<div class="notice3">
+							<h4 style="text-align: center;">Welcome to the mest register portal</h4>
+							<p style="text-align: center;">
+								You can find all prospective, current and past members of the mest community
+							</p>
+							<p>
+							Demo username is: <b style='font-size: 16px;'>philip.afful@meltwater.org</b><br/>
+							Demo password is: <b style='font-size: 16px;'>admin123</b>
+							</p>
+						</div> 
+					</div>
+					<div>
+						<input type='text' placeholder='Username or Email' id="user" name="user" value="" />
+					</div>
+					<div>
+						<input type="password" placeholder='password' id="password" name="password" value="">
+					</div>
+					<div>
+						<input type="submit"/>
+					</div>
+					<p id='form-messages'></p>
+				</form>
+			</div>
+		</div>
+	</div>
+</template>

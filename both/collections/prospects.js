@@ -26,7 +26,6 @@ Prospects.attachSchema(new SimpleSchema({
         regEx: SimpleSchema.RegEx.Email,
         label: "Contact Email"
     },
-
     contact: {
         type: String,
         label: "Contact Phone Number",
@@ -36,7 +35,7 @@ Prospects.attachSchema(new SimpleSchema({
         //     rows: 1
         // }
     },
-     category: {
+    category: {
         type: String,
         autoform: {
             afFieldInput: {
@@ -45,11 +44,11 @@ Prospects.attachSchema(new SimpleSchema({
             },
             options: function(){
                 return [
-                    {value: 'fellow', label: 'Fellow'},
-                    {value: 'eit', label: 'EIT'},
-                    {value: 'staff', label: 'Staff'},
-                    {value: 'investor', label: 'Investor'},
-                    {value: 'others', label: 'Others'}
+                {value: 'fellow', label: 'Fellow'},
+                {value: 'eit', label: 'EIT'},
+                {value: 'staff', label: 'Staff'},
+                {value: 'investor', label: 'Investor'},
+                {value: 'others', label: 'Others'}
                 ]
             }
         }
@@ -60,16 +59,16 @@ Prospects.attachSchema(new SimpleSchema({
         optional: true,
         max: 1000,
         autoform: {
-    
-             afFieldInput: {
-                type: 'textarea'
-            }
+            
+           afFieldInput: {
+            type: 'textarea'
         }
-    },
-    createdAt: {
-        type: Date,
-            autoValue: function () {
-                  return new Date()
-        }
+    }
+},
+createdAt: {
+    type: Date,
+    autoValue: function () {
+      return new Date()
+  }
 }
 }));

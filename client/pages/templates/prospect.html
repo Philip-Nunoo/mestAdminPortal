@@ -5,38 +5,37 @@
 			<a href="#" class="loadCSV">LoadFrom CSV</a>
 		</div>
 		<dl class="tabs" data-tab>
-			<dd class="active"><a href="#panel2-1">Fellows</a></dd>
+			<dd class="active"><a href="#panel2-1">All</a></dd>
 			<dd><a href="#panel2-2" class="panelTab">EITS</a></dd>
 			<dd><a href="#panel2-3" class="panelTab">Staffs</a></dd>
 			<dd><a href="#panel2-4" class="panelTab">Investors</a></dd>
+			<dd><a href="#panel2-5">Fellows</a></dd>
 		</dl>
 		<div class="tabs-content">
 			<div class="content active" id="panel2-1">
 				<p>
-					{{#each prospects}}
-					<div class="col s12 m4">
-						<div class="card blue-grey darken-1">
-							<div class="card-content white-text">
-								<span class="card-title">{{firstName}} {{lastName}}</span>
-								<p>Email Address: {{email}}</p>
-								<p>Mobile Number: {{contact}}</p>
-							</div>
-							<div class="card-action">
-								<a href="#">{{description}}</a>
-							</div>
-						</div>
-					</div>
-					{{/each}}
+					{{> prospectCards datum=prospects}}
 				</p>
 			</div>
 			<div class="content" id="panel2-2">
-				<p>Second panel content goes here...</p>
+				<p>
+					aaa{{> prospectCards datum=eits}}
+				</p>
 			</div>
 			<div class="content" id="panel2-3">
-				<p>Third panel content goes here...</p>
+				<p>
+					{{> prospectCards datum=staffs}}
+				</p>
 			</div>
 			<div class="content" id="panel2-4">
-				<p>Fourth panel content goes here...</p>
+				<p>
+					{{> prospectCards datum=investors}}
+				</p>
+			</div>			
+			<div class="content" id="panel2-5">
+				<p>
+					{{> prospectCards datum=fellows}}
+				</p>
 			</div>
 		</div>
 	</div>

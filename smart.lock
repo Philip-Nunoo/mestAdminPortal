@@ -4,7 +4,8 @@
     "basePackages": {
       "foundation": {},
       "jquery-csv": {},
-      "moment": {}
+      "moment": {},
+      "chartjs": {}
     },
     "packages": {
       "foundation": {
@@ -21,6 +22,11 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.8.1",
         "commit": "722ea63783d594341023836b7d418ab2567dab8c"
+      },
+      "chartjs": {
+        "git": "https://github.com/donskifarrell/meteor-chartjs.git",
+        "tag": "v0.0.6",
+        "commit": "7999ee282dc6302806c421607ecd9248d160c6e7"
       }
     }
   }

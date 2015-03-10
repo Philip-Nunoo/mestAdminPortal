@@ -1,62 +1,109 @@
 <template name="dashboard">
   <div class="dashboard">
-    <div class="notice">
-      <h4>Welcome to the mest register portal</h4>
-      <p>
-        You can find all prospective, current and past members of the mest community
-      </p>
-      <p>
-        This provides an intuitive way for admin staffs to seamlessly monitor processes beginning from the application stage till one becomes an alumni.
-      </p>
+    <div data-alert class="alert-box info radius">
+      <a href="#" class="close" style="top: 10%; font-size: 30px;">&times;</a>
+      <div class="notice3">
+        <h4>Welcome to the mest register portal</h4>
+        <p>
+          You can find all prospective, current and past members of the mest community
+        </p>
+        <p>
+          This provides an intuitive way for admin staffs to seamlessly monitor processes beginning from the application stage till one becomes an alumni.
+        </p>
+      </div>  
     </div>
-    <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-4">
+    
+    <div class="large-12 columns homeboard">
       {{#each item}}
-      <li>
+      <div class='dash-item-list'>
         <div class="dash-board">
           <div class="holder">
-            <i class="fa fa-university">
-            </i>
+            <i class="fa fa-university"></i>
             <div class="info">
               <div class="number">
                 {{numberOfProspects}}
-              </div> Total number of prospects
+              </div> 
+              Total number of prospects
             </div>
           </div>
         </div>
-      </li>
-      <li>
+      </div>
+      <div class='dash-item-list'>
         <div class="dash-board">
           <div class="holder">
             <i class="fa fa-mortar-board"></i>
             <div class="info">
-              <div class="number">{{numberOfApplicants}}
-              </div> Total number of applicants
+              <div class="number">
+                {{numberOfApplicants}}
+              </div> 
+              Total number of applicants
             </div>
           </div>
         </div>
-      </li>
-      <li>
+      </div>
+      <div class='dash-item-list'>
         <div class="dash-board">
           <div class="holder">
             <i class="fa fa-bus"></i>
             <div class="info">
-              <div class="number">{{numberOfEits}}
-              </div> Total Number of eits
+              <div class="number">
+                {{numberOfEits}}
+              </div> 
+              Total Number of eits
             </div>
           </div>
         </div>
-      </li>
-      <li>
+      </div>
+      
+      <div class='dash-item-list'>
         <div class="dash-board">
           <div class="holder">
             <i class="fa fa-trophy"></i>
-            <div class="info">            <div class="number">{{numberOfAlumnis}}
-            </div> Total number of alumni
+            <div class="info">
+              <div class="number">
+                {{numberOfAlumnis}}
+              </div> Total number of alumni
+            </div>
           </div>
         </div>
       </div>
-    </li>
-    {{/each}}
-  </ul>
-</div>
+      {{/each}}
+    </div>
+
+    <div class="large-12 columns chart-board">
+      <div class="large-8 columns">
+        <div class="chart">
+          <div>
+            <div class="header">
+              <h3>Pie chart to show total number of</h3>
+              <h5>{applicants, eits, alumni}</h5>
+            </div>
+          </div>
+          <canvas id="pieChart1">applicants</canvas>
+          <canvas id="pieChart2">eits</canvas>
+          <canvas id="pieChart3">alumni</canvas>
+          <div class="clear" style="margin-bottom: 30px;"></div>
+        </div>
+      </div>
+      <div class="large-4 columns">
+        <div class="chart notifications">
+          <h3>Notifications</h3>
+          <div>
+            <div class="adminNotice">
+              23 Emails sent for registration
+            </div>
+            <div class="adminNotice">
+              23 Emails sent for registration
+            </div>
+            <div class="adminNotice">
+              23 Emails sent for registration
+            </div>
+            <div class="adminNotice">
+              23 Emails sent for registration
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>

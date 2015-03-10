@@ -27,6 +27,12 @@ Applicants.attachSchema(new SimpleSchema({
 		label: "Last Name",
 		max: 300
 	},
+    contact: {
+        type: String,
+        label: "Contact Phone Number",
+        optional: true,
+        max: 100
+    },
 	dateOfBirth: {
 		type: String,
 		label: "Date of Birth",
